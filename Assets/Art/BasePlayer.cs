@@ -12,7 +12,8 @@ public class BasePlayer : MonoBehaviour
         {
             Destroy(gameObject);
             //PARTICLE:
-            Instantiate(dieParticle, transform.position, dieParticle.transform.rotation);
+            GameObject par = Instantiate(dieParticle, transform.position, dieParticle.transform.rotation);
+            Destroy(par, 3.0f);
         }
     }
     private void OnCollisionEnter(Collision collision)

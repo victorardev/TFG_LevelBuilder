@@ -43,7 +43,8 @@ public class Tower : MonoBehaviour
                     timer -= Time.deltaTime;
                     if(timer <= 0.0f)
                     {
-                        Instantiate(shootParticle, transform.position, shootParticle.transform.rotation);
+                        GameObject par = Instantiate(shootParticle, transform.position, shootParticle.transform.rotation);
+                        Destroy(par, 3.0f);
                         GameObject b = Instantiate(bala, transform.position + transform.forward, transform.rotation);
                         b.GetComponent<Bala>().initForce = look;
                         //PARTICLE:                        

@@ -39,15 +39,15 @@ public class PathCreate : MonoBehaviour
                     {
                         Instantiate(jeff, hit.point, jeff.transform.rotation);
                         //PARTICLE: 
-                        Instantiate(insertParticle, transform.position, insertParticle.transform.rotation);
+                        GameObject par = Instantiate(insertParticle, hit.point, insertParticle.transform.rotation);
+                        Destroy(par, 3.0f);
                         GameManager.pointList.Add(hit.point);
                     }
                     lines.positionCount = GameManager.pointList.ToArray().Length;
                     lines.SetPositions(GameManager.pointList.ToArray());
                                       
                 }
-            }
-            
+            }          
         } 
         else
         {

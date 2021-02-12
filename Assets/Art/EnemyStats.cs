@@ -20,7 +20,8 @@ public class EnemyStats : MonoBehaviour
         if (collision.gameObject.tag == "BasePlayer")
         {
             //PARTICLE:
-            Instantiate(dieParticle, transform.position, dieParticle.transform.rotation);
+            GameObject par = Instantiate(dieParticle, transform.position, dieParticle.transform.rotation);
+            Destroy(par, 3.0f);
             Destroy(gameObject);
         }
     }

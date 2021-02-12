@@ -16,6 +16,7 @@ public class Bala : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyStats>().live -= 50;
+            Destroy(gameObject);
         }
     }
 }

@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 {
     private Transform enemySpawn;
     public static List<Vector3> pointList = new List<Vector3>();
-    float time = 10.0f;
-    public Text timeText;
+    float time = 30.0f;
+    public Text timeText, vida;
     public GameObject basePlayer;
     private void Start()
     {
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        timeText.text = time.ToString();
+        timeText.text = "Time: " + time.ToString("F2");
         if (PathCreate.play)
         {
             time -= Time.deltaTime;
@@ -27,8 +27,10 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(currentSceneName);
                 PathCreate.play = false;
                 PathCreate.pathReady = false;
-                GameManager.pointList.Clear();
+                GameManager.pointList.Clear();               
             }
+            int live = GameObject.FindGameObjectWithTag("BasePlayer").GetComponent<BasePlayer>().live;
+            vida.text = "Live: " + live.ToString();
         }
     }
 }
