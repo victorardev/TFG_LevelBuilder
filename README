@@ -1,0 +1,22 @@
+README: 
+
+Game Genre: Tower defense game prototype for a mobile level builder. 
+
+Idea: Use this game genre where the players can build their own levels/circuits and play them using different turret mechanics and more.
+
+#####
+
+Game Controls: 
+
+F: To spawn/appear the turret. 
+Left mouse button(Turret): To insert the turret in the floor near to the path. 
+Left mouse button(Path): Hit the left button to create a path point. 
+
+Hit play button to begin the horde of enemies. 
+
+Live: 100 (Of the player base) 
+Time remaining to survive. 
+
+#####
+
+Research work on inserting virtual structures on real world structures through mobile devices. 
