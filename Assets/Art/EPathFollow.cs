@@ -22,7 +22,7 @@ public class EPathFollow : MonoBehaviour
 
         Vector3 desiredVelocity = GameManager.pointList[currentIndex] - transform.position;
         desiredVelocity.Normalize();
-        desiredVelocity *= 3.0f;
+        desiredVelocity *= 6.0f;
         body.velocity = desiredVelocity;
 
         if (Vector3.Distance(transform.position, GameManager.pointList[currentIndex]) < 1.0f)

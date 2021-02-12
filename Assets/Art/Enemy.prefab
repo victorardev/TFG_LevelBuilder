@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   live: 100
+  dieParticle: {fileID: 100748, guid: cd4d7020429cde74db076ffa72495419, type: 3}

@@ -11,6 +11,7 @@ public class Tower : MonoBehaviour
     GameObject mainObjectToShoot = null;
     public GameObject bala;
     float timer = 0.2f;
+    public GameObject shootParticle;
 
     public void Start()
     {
@@ -42,11 +43,14 @@ public class Tower : MonoBehaviour
                     timer -= Time.deltaTime;
                     if(timer <= 0.0f)
                     {
-                        GameObject b = Instantiate(bala, transform.position, transform.rotation);
+                        Instantiate(shootParticle, transform.position, shootParticle.transform.rotation);
+                        GameObject b = Instantiate(bala, transform.position + transform.forward, transform.rotation);
                         b.GetComponent<Bala>().initForce = look;
+                        //PARTICLE:                        
+                        Physics.IgnoreCollision(this.gameObject.GetComponent<BoxCollider>(),
+                            b.GetComponent<BoxCollider>());
                         timer = 1.2f;
                     }
-               
                     break;
             }
         }      

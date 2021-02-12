@@ -5,11 +5,14 @@ using UnityEngine;
 public class BasePlayer : MonoBehaviour
 {
     public int live = 100;
+    public GameObject dieParticle;
     private void Update()
     {
         if(live <= 0)
         {
             Destroy(gameObject);
+            //PARTICLE:
+            Instantiate(dieParticle, transform.position, dieParticle.transform.rotation);
         }
     }
     private void OnCollisionEnter(Collision collision)

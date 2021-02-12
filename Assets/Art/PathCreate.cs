@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class PathCreate : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PathCreate : MonoBehaviour
     static public bool play = false, pathReady = false;
     public GameObject enemySpawn, basePlayer;
     public Transform posSpawn;
+    public GameObject insertParticle;
 
     void Start()
     {
@@ -28,15 +30,21 @@ public class PathCreate : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(0))
                 {
+                    if (EventSystem.current.IsPointerOverGameObject())
+                        return;
+
                     RaycastHit hit;
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out hit))
                     {
                         Instantiate(jeff, hit.point, jeff.transform.rotation);
+                        //PARTICLE: 
+                        Instantiate(insertParticle, transform.position, insertParticle.transform.rotation);
                         GameManager.pointList.Add(hit.point);
                     }
                     lines.positionCount = GameManager.pointList.ToArray().Length;
                     lines.SetPositions(GameManager.pointList.ToArray());
+                                      
                 }
             }
             

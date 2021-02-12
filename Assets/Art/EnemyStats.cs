@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public int live = 100;
+    public GameObject dieParticle;
 
     private void Update()
     {
@@ -18,6 +19,8 @@ public class EnemyStats : MonoBehaviour
     {
         if (collision.gameObject.tag == "BasePlayer")
         {
+            //PARTICLE:
+            Instantiate(dieParticle, transform.position, dieParticle.transform.rotation);
             Destroy(gameObject);
         }
     }

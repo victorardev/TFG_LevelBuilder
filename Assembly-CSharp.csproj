@@ -56,7 +56,9 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Art\BasePlayer.cs" />
     <Compile Include="Assets\Art\EnemySpawn.cs" />
+    <Compile Include="Assets\Art\Tower.cs" />
     <Compile Include="Assets\Art\GameManager.cs" />
     <Compile Include="Assets\URP\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Art\PlayCheck.cs" />
@@ -64,11 +66,10 @@
     <Compile Include="Assets\Art\EPathFollow.cs" />
     <Compile Include="Assets\Art\PathCreate.cs" />
     <Compile Include="Assets\Art\EnemyStats.cs" />
-    <Compile Include="Assets\Art\Tower.cs" />
     <Compile Include="Assets\Art\Bala.cs" />
-    <Compile Include="Assets\Art\BasePlayer.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files (x86)\Unity\2021.1.0b5\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
